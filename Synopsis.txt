@@ -1,0 +1,46 @@
+Norwegian humanoid developer company 1X 
+Robot Era raised $14 million
+OpenAI-backed company Figure AI in March (2024)
+Agility Robotics is opening a humanoid robot factory to mass produce its first line of humanoid robots, Digit.
+
+NVIDIA has introduced Project GR00T(“Generalist Robot 00 Technology”), a new general-purpose foundation model designed to advance humanoid robot development. 
+NVIDIA unveiled the Jetson Thor, a new system-on-a-chip (SoC) designed specifically for use in humanoid robots. 
+Significant upgrades to the NVIDIA Isaac robotics platform.
+NVIDIA also announced Isaac Manipulator and Isaac Perceptor, which are collections of robotics-pretrained models, libraries, and reference hardware.
+Tesla is more than halfway through developing its humanoid robot, Optimus. 
+Open Source Robotics Foundation (OSRF) launched the Open Source Robotics Alliance (OSRA)
+Conferences like ICRA, IROS, RoboCup became more popular
+
+
+Here’s a breakdown of the typical stages:
+1)System Architecture: This stage involves defining the robot’s overall structure and design, including selecting its major hardware and software components and laying out its communication systems and data flow.
+2)Component Selection: Key components such as sensors, actuators, controllers, and computational hardware are selected based on requirements like performance, power consumption, cost, and compatibility.
+3)Modelling in 3D: The physical design of the robot is modeled using 3D CAD software such as Fusion 360, Solidworks, etc. This helps visualize the robot’s structure, optimize the design, and prepare for fabrication.
+4)Building the Hardware: This phase involves the actual assembly of the robot’s hardware components, including the mechanical build and the electronic circuit integration.
+Working on Perception, Planning, and Control: Development of the software that enables the robot to perceive its environment, plan its actions, and control its movements. This includes implementing algorithms for calibration, localization, object detection, path planning, and motion control. 
+5)Simulations: The robot is simulated within the Gazebo simulation environment before physical testing. The robot’s 3D model is converted into a URDF file that is used in the simulation software. This allows testing the robot’s performance in a controlled virtual environment to predict how it will act in the real world.
+6)Testing:
+  a) Unit testing individual components or modules of the robot are tested to ensure each function works as intended in isolation.
+  b) Integration testing is conducted to ensure that integrated components function together as expected. This phase checks for data flow and interaction errors between modules.
+  c) System testing includes testing of both hardware and software. The complete system is tested to verify that it meets all specified requirements, including performance, safety, and reliability testing.
+7) Containerization and Deployment: The software components are packaged into containers using tools like Docker to ensure consistency across different development, testing, and production environments. The robot is then deployed in its target environment where it will operate.
+
+There are four important components in Robot automation, they are: 
+1) Hardware and Sensor,
+2) Robot Perception, 
+3) Motion Planning and 
+4) Robot Control.
+
+Robotics systems often require complex computational architectures that include CPUs, GPUs, and DSPs (Digital Signal Processors).
+DSPs are used for real-time processing of audio, video, and control sensor data, optimizing tasks that require high-speed numeric calculations.
+
+Find out how a gyroscope works
+
+Resume here
+3. Actuators / Motors:
+
+
+
+
+
+
