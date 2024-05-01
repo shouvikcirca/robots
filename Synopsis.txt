@@ -38,6 +38,191 @@ Find out how a gyroscope works
 
 Resume here
 3. Actuators / Motors:
+---------------------------
+Types of sensors
+  - Proximity sensors
+    - Inductive
+    - Capacitive
+  - Vision sensors
+  - Force sensors
+  - Inertial Measurement Unit (IMU)
+  - 3d LIDAR
+  - GPS
+
+Home > Computer Vision > Introduction to Robotics: A comprehensive Guide to Robotics for Beginners
+Introduction to Robotics: A comprehensive Guide to Robotics for Beginners
+soumyadipsoumyadip
+Pranav DuraiPranav Durai
+APRIL 16, 2024 LEAVE A COMMENT
+Computer Vision Deep Learning Robotics
+Robotics development has been there for decades, but even after two decades into the 21st century, we are still unable to draw the true potential of robotics, and realize the sci-fi dreams. One sci-fi scene that stands out to me is from the anime called “Pluto”, where a war robot North No. 2 trying to learn piano, from an blind retired maestro Paul Duncan. In the anime it was shown that North No. 2 was able to recognize and play the correct notes on the piano but Duncan always felt that the robot was missing the true essence of that music. This struggle of North No. 2 not being able to master the nuances of that music, actually captures the problem we are currently facing in the field of robotics.
+
+
+Looking at AI development, it has evolved many folds in the same time frame compared to robotics. We are witnessing the field of NLP coming up with ChatGPT, LLMs, the vision community building models that are able to generate photorealistic images, videos. But, in the field of robotics, the robots are still struggling at tasks as simple as opening a door. This makes you ask yourself, where are we going wrong, in terms of robotics development? It turns out that, it’s a well known phenomenon “Moravec’s Paradox”,
+
+What seems hard to us is actually easy, and what seems easy to us is actually hard.
+
+In the ongoing research there is this idea called “embodiment hypothesis”, there has been only one form of generally intelligent system that has existed in nature that is embodied intelligence. Humans went through millions of years of evolution, and if you look at evolution it becomes clear that evolution spent time evolving us to be very good at sensory motor control. The fact that you and I can simply pick up and play with an object is trivial to us, whereas if you ask people if playing chess or Go is easy, most of them will say No. The fact that it’s hard for us, makes it clear that’s not what we evolved to do. The problems that are hard is taken in a wrong context, it is hard in terms of computation.
+
+A Comprehensive Guide to Robotics
+A Comprehensive Guide to Robotics
+In 2009, during the Robotics: Science and Systems (RSS) conference in Atlanta, a group of universities and industry leaders, with support from the Computing Community Consortium (CCC), advocated for establishing a national roadmap to boost robotics development in the United States. This is when the thought of celebrating the robotics development through the national robotics week came into the picture. 
+
+As we approach the end of this week we thought of starting a series of articles that will serve as a beginners guide to robotics, where we will be learning the tools and concepts as we build a project on AMR(Autonomous Mobile Robot) robot for Warehouse Environment. We will mostly focus on ROS2 and Gazebo Ignition for development and testing, and as of now we will not touch the hardware side of things. The roadmap of this series will look like the following,
+
+Introduction to Robotics: A comprehensive Guide to Robotics for Beginners(this article)
+Getting Started with ROS2 and Gazebo Ignition: Building an Autonomous AMR Robot
+Introduction to SLAM: Robot Localization in an Unknown Environment 
+Introduction to Planning and Control: Getting the Robot from Start to Goal
+This article starts with me trying to convince why someone should start learning robotics in 2024, then we discuss the workflow of an end to end robotics project. This is very important as each of the parts creates its very own sub-field. After you understand it becomes imperative to know more about the key elements that are at the heart of robotic automation such as hardware and sensor, perception, planning and control. Later it was followed by a breakdown of the Deep Learning Components in Tesla Autopilot. We then look into the commonly used tools and libraries in robotics development. There is a dedicated section in the post talking about the job opportunities in the field of robotics. Finally we end the post by talking about recent developments in robotics research.
+
+Why should one need to learn robotics in 2024
+Growing Robotics Communities and Resources:
+Life Cycle of a Robotics Project
+Robotics Tools
+Core Components of Robotic Automation
+Hardware
+Sensors
+Robot Perception
+Motion Planning
+Types Path Planners:
+Robot Control
+Advanced Research in Robotics
+Conclusion
+Why should one need to learn robotics in 2024
+At some point in our lives, we all had a bit of Bob the Builder in us, and each of us has likely entertained the idea of building a robot. Whether it’s extracting a motor from a toy car to install in a toy boat or constructing a remote-controlled car capable of running errands, the spirit of innovation has stirred within us all. Some of us followed through and built robots, possibly during high school or college, while others did not. For those who didn’t build a robot, it might have been because of limited resources, a lack of knowledge, or insufficient time to dedicate to a project. Now, in 2024, the barriers to entry are lower than ever before. The knowledge gap has narrowed; computing and hardware no longer cost an arm and leg.
+
+Additionally, the opportunities in robotics are more significant than ever. If you’re still on the fence, let me try to convince you why you should consider pursuing a career as a robotics developer or researcher.
+
+2024: The Year of Robots
+2024: The Year of Robots, humanoids
+2021 was the year for Autonomous Vehicle investments; the autonomous vehicle sector experienced a significant financial boost, receiving $12.5 billion through 264 deals. This spike in funding was part of a broader surge in venture capital investment, marking a record-breaking year for the industry.
+
+In the last few years, investments in robotics companies have increased in many ways. In 2023, $11 billion was invested in Robotics, whereas September alone had an investment worth $1.8 billion. In January 2024, the robotics companies raised a total of $578M.  In January 2024, Norwegian humanoid developer company 1X secured the largest investment of $100 million. The following month, Robot Era raised $14 million. 
+
+After an awestruck demonstration by OpenAI-backed company Figure AI in March (2024), the company has confirmed that it has raised $675 million to develop humanoids. 
+
+There have been a lot of investments in humanoid robot development companies, such as Tesla, Boston Dynamics, Xiaomi, Toyota, and Mercedes-Benz. Recently, there has been news that Agility Robotics is opening a humanoid robot factory to mass produce its first line of humanoid robots, Digit.
+
+As the year progresses, we can expect to see a continued increase in investments, particularly with the rise in per capita income. This financial boost will not only bring more robots into households for general-purpose tasks but also fuel the growth of AI and robotics industries. The recent advancements in AI and chip manufacturing have not only accelerated AI development but also provided a solid foundation for solving robotics, attracting more researchers to this field. 
+
+
+Influence of Nvidia GTC’2024
+NVIDIA CEO Jenson Huang with humanoid robots
+GTC ’24 has significantly boosted robot development, especially in the humanoid industry. It was the first time that the growth and development of robotics were prioritized on a global stage. For this purpose, multiple announcements related to robotics were made:
+
+NVIDIA has introduced Project GR00T(“Generalist Robot 00 Technology”), a new general-purpose foundation model designed to advance humanoid robot development. 
+NVIDIA unveiled the Jetson Thor, a new system-on-a-chip (SoC) designed specifically for use in humanoid robots. 
+Significant upgrades to the NVIDIA Isaac robotics platform.
+NVIDIA also announced Isaac Manipulator and Isaac Perceptor, which are collections of robotics-pretrained models, libraries, and reference hardware.
+
+Big Companies Joining The Robotics Race
+Apple is considering home robots as its next big product line. 
+Tesla is more than halfway through developing its humanoid robot, Optimus. 
+Hugging Face is hiring a Robotics Engineer from the Tesla Optimus Team.
+Recently, the Open Source Robotics Foundation (OSRF) launched the Open Source Robotics Alliance (OSRA), which aims to strengthen the governance and oversight of open-source robotics software projects through this new initiative. OSRA plans to follow in the footsteps of the Linux Foundation and the Eclipse Foundation through a mixed-membership and meritocratic model. 
+
+The Robotics Industry Needs More Engineers
+The robotics industry, traditionally facing a talent shortage, is expanding as more companies launch robotics divisions and deep tech startups to meet the growing demand for robots. However, recruiting skilled personnel remains a challenge. This need is evident from the numerous inquiries from both current and prospective learners at OpenCV University seeking comprehensive robotics courses.
+
+Growing Robotics Communities and Resources:
+Despite the long history of Autonomous vehicle development, this field became well-known to people after the DARPA Grand Challenge in 2005, and researchers shifted their focus on developing autonomous vehicles, during 2010-2015 a lot of companies got funded for building self-driving cars for public use. As the time progressed the computation, applications of robots increased which fueled the further growth in research, open source development. Conferences like ICRA, IROS, RoboCup became more popular and new conferences dedicated to particular fields were being organized. Open-source communities around ROS, OpenCV, Arduino, tensorflow, pytorch started to surface. One best thing about having a community is that it becomes easier to get help from the community if stuck. Robotics competitions like FIRST Robotics, RoboCup, and DARPA Challenges, GSoC inspired innovation and practical problem-solving skills. A lot of lectures and tutorials on robotics being openly published by multiple institutes, communities. On top of that, the Post pandemic era has seen a huge growth in terms of robotics resource development.
+
+Life Cycle of a Robotics Project
+The life cycle of a robotics project involves several distinct phases, each crucial to the successful development and deployment of a robotic system. Here’s a breakdown of the typical stages:
+
+System Architecture: This stage involves defining the robot’s overall structure and design, including selecting its major hardware and software components and laying out its communication systems and data flow.
+Component Selection: Key components such as sensors, actuators, controllers, and computational hardware are selected based on requirements like performance, power consumption, cost, and compatibility.
+Modelling in 3D: The physical design of the robot is modeled using 3D CAD software such as Fusion 360, Solidworks, etc. This helps visualize the robot’s structure, optimize the design, and prepare for fabrication.
+Building the Hardware: This phase involves the actual assembly of the robot’s hardware components, including the mechanical build and the electronic circuit integration.
+Working on Perception, Planning, and Control: Development of the software that enables the robot to perceive its environment, plan its actions, and control its movements. This includes implementing algorithms for calibration, localization, object detection, path planning, and motion control. 
+Simulations: The robot is simulated within the Gazebo simulation environment before physical testing. The robot’s 3D model is converted into a URDF file that is used in the simulation software. This allows testing the robot’s performance in a controlled virtual environment to predict how it will act in the real world.
+Testing:
+Unit testing individual components or modules of the robot are tested to ensure each function works as intended in isolation.
+Integration testing is conducted to ensure that integrated components function together as expected. This phase checks for data flow and interaction errors between modules.
+System testing includes testing of both hardware and software. The complete system is tested to verify that it meets all specified requirements, including performance, safety, and reliability testing.
+Containerization and Deployment: The software components are packaged into containers using tools like Docker to ensure consistency across different development, testing, and production environments. The robot is then deployed in its target environment where it will operate.
+This structured approach ensures a thorough development process, from initial design to deployment, making it possible to efficiently handle complex robotics projects while ensuring high performance and reliability standards.
+
+Robotics Tools
+As a developer, it’s essential to grasp hardware and software. We will not go into depth about the technical skills required in hardware. Still, it’s essential to know the primary electrical components/tools, such as resistors, capacitors(Arduino, Raspberry Pi, and ESP32, etc.), wires, Diodes, LEDs, power supply(battery), Microcontrollers, different kinds of motors, Relays, Switches, breadboard, multimeter, soldering tool, sensors, AC-DC converters, etc. Having the concept of Power rating is essential.
+
+Robot Operating System (ROS): Robot Operating System is a middle-ware software that enables communication between software and hardware. It was developed by an open-source organization called Open Robotics, and the ROS development has been going on for almost a decade now. They have a range of robotics software and libraries that are in active development and extensively used in industry and academia.
+Linux: Experience working on a Linux-based OS, such as Ubuntu, Arch, Manjaro, etc., is essential.
+Programming language: It’s very important to know C++ and Python because you will most often use ROS through these two languages. Recently, many companies and open-source organizations have focused on building Rust-based tools; there is also a Rust version of ROS.
+Computer Vision and Deep Learning tools: OpenCV, Boost, Eigen, PCL, and Libtorch/Pytorch are fundamental tools. Boost and Eigen are multithreading data manipulation libraries, Opencv is the computer vision library, PCL handles point clouds, and Libtorch(c++)/pytorch is used for inference deep learning models. OpenVino and TensorRT can be used for model quantization.
+Perception Tools: The SLAM robotics community extensively uses GMapping, ORB-SLAM2, slam_toolbox, etc. For Lidar Localization and Mapping LOAM, FLOAM is used extensively. The robot_calibration ROS package provides tools to calibrate the intrinsic and extrinsic parameters of various sensors mounted on a robot, as well as the kinematics of robotic arms.
+Path Planning Tool: ROS2 has its own planning library called Navigation2. There is also MoveIt 2 for robotic arm manipulation. OMPL (Open Motion Planning Library) is often used in conjunction with ROS2 via integration tools like MoveIt 2 for complex motion planning tasks.
+Control Tools: ros2_control is a highly versatile framework designed for controlling hardware in ROS2. 
+Modelling Software: Different robot 3D modeling software is used in industry, such as Solidworks, AutoCAD, Unity, etc.
+Simulation Software: Gazebo is one of the most popular software when it comes to robotics simulations, used extensively in academia and industry. Carla, SUMO, and LGSVL Simulator are very popular for Autonomous Vehicles. For RL simulators, there are Pybullet, MuJoCo, Isaac Sim, etc.
+Visualization Tools: People extensively use Rviz2, Foxglove, Rerun, PlotJuggler, etc., to visualize sensor data or instructions coming from the robot.
+Testing and Deployment Software: Pytest and CppUTest are extensively used for unit testing. They are executed after the development code is pushed in Git Hub through GitHub Actions. Docker plays a significant role in robotics deployment. A lot of people seem to use Ansible for automating tasks related to deployment. Grafana, Prometheus is used for resource monitoring like CPU usage, memory consumption, network etc.
+Core Components of Robotic Automation
+
+There are four important components in Robot automation, they are: 
+
+Hardware and Sensor,
+Robot Perception, 
+Motion Planning and 
+Robot Control. 
+We will be going through each of them in depth in the upcoming sections.
+
+Hardware
+The technical aspects of robotics design are multifaceted, covering a range of hardware components tailored to specific tasks and environments. Here’s a detailed overview focusing on the architecture design for processing units, application-specific hardware components and actuators/motors:
+
+1. Architecture Design for CPU, GPU, and DSP: Robotics systems often require complex computational architectures that include CPUs, GPUs, and DSPs (Digital Signal Processors). The CPU handles general-purpose processing tasks and orchestrates the operation of other hardware components. GPUs are crucial for processing intensive parallel tasks quickly, especially for image and video analyses in robotics. DSPs are used for real-time processing of audio, video, and control sensor data, optimizing tasks that require high-speed numeric calculations. A well-integrated architecture ensures that these components work harmoniously to deliver the desired performance, balancing computational power, energy efficiency, and real-time processing capabilities.
+
+2. Hardware for Application-Specific Components: Robots designed for specific applications like Unmanned Aerial Vehicles (UAVs) and Autonomous Vehicles (AVs) incorporate specialized hardware. UAVs, for example, include lightweight, high-strength materials and components like GPS modules, altimeters, and gyroscopes for navigation and stability. AVs incorporate a suite of sensors such as LiDAR, radar, and cameras, coupled with advanced computational hardware to support autonomous navigation systems that process vast amounts of data in real time to make split-second decisions.
+3. Actuators / Motors: Actuators and motors are the muscles of robots, converting electrical energy into mechanical motion. Precision servomotors are commonly used for their ability to accurately control angular or linear position, velocity, and acceleration. Hydraulic or pneumatic actuators are employed for robots requiring more substantial force, albeit at the cost of control complexity and setup bulkiness. The selection of actuators and motors largely depends on the required force, speed, accuracy, and power efficiency for the robot’s intended tasks.
+
+The selection of actuators and motors largely depends on the required force, speed, accuracy, and power efficiency for the robot’s intended tasks.
+
+Sensors
+As human beings, we have multiple sensory components that assist us in sensing different aspects like vision, hearing, smell, taste and touch. Other than the five fundamental senses, we are also able to feel the change in temperature, and balance ourselves in different terrains.  Another sense called proprioception, mediated by the proprioceptors, and mechanosensory neurons located within the muscles, tendons and joints. 
+
+So, now the question is – how are robots able to sense the real-world like humans? Perception through stereo vision is one way, but what about the other sensory inputs?
+
+This brings us to sensors, and they are devices with in-built mechanical, electrical or chemical features that allow them to sense different aspects of the real-world environment. Based on the type of sensory mechanism, sensors can be classified as: 
+
+Proximity Sensors: These sensors detect the presence or absence of objects near the robot. They often use infrared, ultrasonic, or laser technologies to measure the distance to an object. It can be further classified into two sub-sections: 
+
+Inductive Proximity Sensors – Inductive proximity sensors are devices used to detect the presence of metallic objects without physical contact. They operate on the principle of electromagnetic induction, generating an oscillating magnetic field that changes when a metal object comes near.  
+Capacitive Proximity Sensors – These sensors are designed to detect both metallic and non-metallic objects, including liquids and granular materials, through changes in capacitance caused by the presence of an object within their sensing field.
+Vision Sensors: These include cameras and computer vision systems that allow robots to interpret visual information. They can be used for object recognition, navigation, and environment mapping.
+
+Force Sensors: These sensors measure the force and torque applied in different directions. They are commonly used in robotic arms to adjust the strength of movement and ensure safety during interactions with objects and humans.
+
+Inertial Measurement Unit (IMU): IMU’s are fundamental in robotics for tasks requiring precise movement and orientation, such as in autonomous vehicles, drones, and humanoid robots.
+
+3D LiDAR (Light Detection and Ranging): It uses laser pulses to capture the three-dimensional features of environments and objects accurately. It emits thousands to millions of lasers per second, measuring the time it takes for each pulse to return after striking an object. These time-of-flight (ToF) measurements enable LiDAR systems to calculate distances precisely, creating detailed 3D maps of the surroundings.
+
+Global Positioning System (GPS): The Global Positioning System (GPS) is a satellite-based navigation system consisting of a network of at least 24 satellites that orbit the Earth, providing time and location information in all weather conditions, anywhere on or near the Earth where there is an unobstructed line of sight to four or more GPS satellites.
+
+------------------------------
+Below are the two crucial parts of robot perception, and we’ll explore both parts in this article as well in future articles:
+
+1) Robot Navigation/Localization: The problem of estimating the robot’s pose (x,y, z, roll, pitch, yaw) on the map at each timestep. Roll, pitch and yaw represents the rotation keeping the X,Y and Z axes(respectively) fixed.
+2) Deep Learning: Understanding the semantic information coming from a camera mounted on a robot by performing object detection, tracking, segmentation, classification, etc
+
+Few Localization terms that are used intensively in literature, 
+1) Pose: pose means the actual location of the robot in the map (translation and rotation).
+2) Odometry:  Odometry involves estimating the robot’s movement relative to its previous position by using sensors that monitor the output of actuaries, such as motor encoders.
+3) Localization: Localization is more intricately tied with map building and figuring out where you are on a given map
+4) Mapping: Mapping is the process of creating a 3d reconstruction of the surrounding from pure sensor data(camera, lidar).
+5) Drift: Drift in SLAM or Localization in general refers to the gradual accumulation of errors in a robot’s estimated position and orientation over time, which causes a shift in the estimated location. This is a big issue in SLAM/Localization.
+6) Loop Closure: Loop closure in SLAM (Simultaneous Localization and Mapping) refers to the process of recognizing a previously visited place within the map being constructed, thereby closing a loop. If we omit loop closures, SLAM essentially becomes odometry. This is used to mitigate the problem of multiple registration.
+
+SLAM
+  - LIDAR SLAM
+  - Visual SLAM
+  - Fusion Techniques
+
+Deep Learning for Robot Vision
+Deep Learning has a wide range of applications in robot vision, from segmenting out the derivable region, detecting potential obstacles, identifying traffic symbols, road symbols etc. But, deep learning solutions bring a number of research challenges that can be categorized in three conceptually orthogonal axes:
+1) Learning
+2) Embodiment
+3) Reasoning
 
 
 
